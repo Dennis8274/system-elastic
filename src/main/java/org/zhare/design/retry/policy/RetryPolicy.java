@@ -1,4 +1,6 @@
-package org.zhare.design.retry;
+package org.zhare.design.retry.policy;
+
+import org.zhare.design.retry.RetryContext;
 
 /**
  * @author xufeng.deng dennisdxf@gmail.com

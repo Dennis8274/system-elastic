@@ -1,4 +1,4 @@
-package org.zhare.design.retry;
+package org.zhare.design.retry.backoff;
 
 /**
  * @author xufeng.deng dennisdxf@gmail.com

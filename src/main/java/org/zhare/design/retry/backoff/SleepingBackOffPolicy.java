@@ -1,4 +1,6 @@
-package org.zhare.design.retry;
+package org.zhare.design.retry.backoff;
+
+import org.zhare.design.retry.sleeper.Sleeper;
 
 /**
  * @author xufeng.deng dennisdxf@gmail.com

@@ -1,4 +1,5 @@
-package org.zhare.design.retry;
+package org.zhare.design.retry.classify;
+
 
 import java.io.Serializable;
 import java.util.*;
@@ -28,7 +29,7 @@ public class SubclassClassifier<T, C> implements Classifier<T, C> {
         this.defaultValue = defaultValue;
     }
 
-    void setTypeMap(Map<Class<? extends T>, C> map) {
+    public void setTypeMap(Map<Class<? extends T>, C> map) {
         this.classified = new ConcurrentHashMap<>(map);
     }
 
@@ -58,11 +59,11 @@ public class SubclassClassifier<T, C> implements Classifier<T, C> {
         return defaultValue;
     }
 
-    final C getDefault() {
+    public final C getDefault() {
         return defaultValue;
     }
 
-    Map<Class<? extends T>, C> getClassified() {
+    public Map<Class<? extends T>, C> getClassified() {
         return classified;
     }
 

@@ -4,8 +4,13 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.zhare.design.retry.backoff.BackOffPolicy;
+import org.zhare.design.retry.backoff.FixedBackOffPolicy;
+import org.zhare.design.retry.backoff.SleepingBackOffPolicy;
+import org.zhare.design.retry.policy.RetryPolicy;
+import org.zhare.design.retry.policy.SimpleRetryPolicy;
+import org.zhare.design.retry.sleeper.ThreadWaitSleeper;
 
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 

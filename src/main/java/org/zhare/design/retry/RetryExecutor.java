@@ -1,8 +1,12 @@
 package org.zhare.design.retry;
 
+import org.zhare.design.retry.backoff.BackOffContext;
+import org.zhare.design.retry.backoff.BackOffPolicy;
 import org.zhare.design.retry.base.BackOffInterruptedException;
 import org.zhare.design.retry.base.RetryInterruptedException;
 import org.zhare.design.retry.base.RetryException;
+import org.zhare.design.retry.policy.RetryPolicy;
+import org.zhare.design.retry.policy.SimpleRetryPolicy;
 
 import java.util.List;
 import java.util.Objects;
@@ -79,10 +83,6 @@ public class RetryExecutor implements Executor {
                         backOffPolicy.backOff(backOffContext);
                     } catch (BackOffInterruptedException ex) {
                         throw wrapperIfNecessary(ex);
-                    }
-
-                    if (policy.canRetry(context)) {
-                        backOffPolicy.backOff(backOffContext);
                     }
 
                     if (shouldRethrow(policy, context)) {
